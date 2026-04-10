@@ -52,3 +52,16 @@ A reusable stored procedure was developed to identify high-value purchase orders
 ```sql
 EXEC GetHighValuePurchaseOrders @MinAmount = 50000;
 
+### Views
+A centralized view was created to simplify procurement analysis and avoid repetitive joins:
+
+```sql
+SELECT * FROM vw_ProcurementSummary;
+
+## Visualizations
+
+### 1. Procurement Spend by Category
+![Category Spend](Visualization/´Q4 Line.png´)
+
+### 2. Monthly Procurement Activity (Time Series)
+![Time Series](Visualization/Q9.png)
