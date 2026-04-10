@@ -51,6 +51,7 @@ A reusable stored procedure was developed to identify high-value purchase orders
 
 ```sql
 EXEC GetHighValuePurchaseOrders @MinAmount = 50000;
+```
 
 ---
 
@@ -59,6 +60,7 @@ A centralized view was created to simplify procurement analysis and avoid repeti
 
 ```sql
 SELECT * FROM vw_ProcurementSummary;
+```
 
 ---
 
