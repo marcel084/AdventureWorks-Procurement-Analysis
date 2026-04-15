@@ -42,32 +42,3 @@ The project includes multiple analytical queries covering:
 📌 Full SQL script available here:  
 👉 [`SQL/final_project_sample_code.sql`](SQL/final_project_sample_code.sql)
 
----
-
-## Advanced Components
-
-### Stored Procedure
-A reusable stored procedure was developed to identify high-value purchase orders and classify them based on freight cost impact.
-
-```sql
-EXEC GetHighValuePurchaseOrders @MinAmount = 50000;
-```
-
----
-
-### Views
-A centralized view was created to simplify procurement analysis and avoid repetitive joins:
-
-```sql
-SELECT * FROM vw_ProcurementSummary;
-```
-
----
-
-## Visualizations
-
-### 1. Procurement Spend by Category
-![Category Spend](Visualizations/Q9Pie.png) 
-
-### 2. Monthly Procurement Activity (Time Series)
-![Time Series](Visualizations/Q4Line.png)
