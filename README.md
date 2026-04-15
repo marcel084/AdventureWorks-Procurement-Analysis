@@ -67,7 +67,7 @@ SELECT * FROM vw_ProcurementSummary;
 ## Visualizations
 
 ### 1. Procurement Spend by Category
-![Category Spend](Visualizations/Q9.png) 
+![Category Spend](Visualizations/Q9Pie.png) 
 
 ### 2. Monthly Procurement Activity (Time Series)
 ![Time Series](Visualizations/Q4Line.png)
