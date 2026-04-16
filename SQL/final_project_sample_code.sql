@@ -45,13 +45,13 @@ ORDER BY AvgUnitPrice DESC;
 Show the number of orders per month */
 
 SELECT 
-    DATENAME(MONTH, poh.OrderDate) AS OrderMonth,
+    DATEPART(MONTH, poh.OrderDate) AS OrderMonth,
     COUNT(poh.PurchaseOrderID) AS TotalOrders
 FROM Purchasing.PurchaseOrderHeader poh
 INNER JOIN Purchasing.Vendor v
     ON poh.VendorID = v.BusinessEntityID
-GROUP BY DATENAME(MONTH, poh.OrderDate), MONTH(poh.OrderDate)
-ORDER BY MONTH(poh.OrderDate);
+GROUP BY DATEPART(MONTH, poh.OrderDate)
+ORDER BY OrderMonth;
 
 
 /* 5) A member of the procurement team needs an audit report combining vendor, order date, 
@@ -255,6 +255,7 @@ This stored procedure will:
 
 DROP PROCEDURE IF EXISTS GetHighValuePurchaseOrders;
 
+GO
 CREATE PROCEDURE GetHighValuePurchaseOrders
     @MinAmount DECIMAL(18, 2)
 AS
@@ -289,6 +290,7 @@ without rewriting complex joins every time. This View will:
 
 DROP VIEW IF EXISTS vw_ProcurementSummary;
 
+GO
 CREATE VIEW vw_ProcurementSummary
 AS
 SELECT 
@@ -309,6 +311,7 @@ INNER JOIN Purchasing.Vendor v
     ON poh.VendorID = v.BusinessEntityID
 INNER JOIN Purchasing.ShipMethod sm
     ON poh.ShipMethodID = sm.ShipMethodID;
+GO
 
 -- Query the view for a quick summary of procurement data:
 SELECT * FROM vw_ProcurementSummary;
