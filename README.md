@@ -1,5 +1,12 @@
 # AdventureWorks Procurement Financial Analysis
 
+## Database and Source
+AdventureWorks OLTP 2017
+
+https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks.bacpac
+
+---
+
 ## Overview
 This project presents a procurement financial analysis of the AdventureWorks database using T-SQL. The objective is to evaluate vendor performance, shipping costs, and procurement trends that may impact the profitability of a bicycle manufacturing and distribution company.
 
