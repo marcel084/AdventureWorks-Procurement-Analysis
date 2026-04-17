@@ -45,13 +45,11 @@ ORDER BY AvgUnitPrice DESC;
 Show the number of orders per month */
 
 SELECT 
-    DATEPART(MONTH, poh.OrderDate) AS OrderMonth,
+    DATENAME(MONTH, poh.OrderDate) AS OrderMonth,
     COUNT(poh.PurchaseOrderID) AS TotalOrders
 FROM Purchasing.PurchaseOrderHeader poh
-INNER JOIN Purchasing.Vendor v
-    ON poh.VendorID = v.BusinessEntityID
-GROUP BY DATEPART(MONTH, poh.OrderDate)
-ORDER BY OrderMonth;
+GROUP BY DATENAME(MONTH, poh.OrderDate), MONTH(poh.OrderDate)
+ORDER BY MONTH(poh.OrderDate);
 
 
 /* 5) A member of the procurement team needs an audit report combining vendor, order date, 
